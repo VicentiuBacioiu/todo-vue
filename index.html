@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" src="style.css"></script>
+</head>
+
+<body>
+    <div id="todoApp">
+        <ul>
+            <li v-for="(todo, idx) in todos">
+                <input type="text" v-model="todo.text"/>
+                <div class="del" v-on:click="remove(idx)">x</div>
+            </li>
+        </ul>
+        <div class="add" v-on:click="addNew">+</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
