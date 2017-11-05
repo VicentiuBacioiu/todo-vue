@@ -2,15 +2,17 @@
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://unpkg.com/vue"></script>
-    <link rel="stylesheet" src="style.css"></script>
 </head>
 
 <body>
     <div id="todoApp">
-        <ul>
-            <li v-for="(todo, idx) in todos">
-                <input type="text" v-model="todo.text"/>
+        <ul class="list">
+            <li v-for="(todo, idx) in todos" class="item">
+                <input class="check" v-bind:id="'todo_' + idx" type="checkbox" v-model="todo.checked" />
+                <label v-bind:for="'todo_' + idx" class="check-label"></label>
+                <input class="text" type="text" v-model="todo.text" />
                 <div class="del" v-on:click="remove(idx)">x</div>
             </li>
         </ul>
